@@ -8,14 +8,14 @@
   </header>
 
   <div class="search-section">
-    <input 
-      type="text" 
+    <textarea 
       [(ngModel)]="countryInput" 
-      (keyup.enter)="sendRequest()"
-      placeholder="Ask me about information about a country (e.g., Austria)" 
+      (keydown.enter)="$event.preventDefault(); sendRequest()"
+      placeholder="Ask me for information about a country (e.g., Austria)" 
       class="search-input"
       [disabled]="isLoading()"
-    />
+      [rows]="textareaRows()"
+    ></textarea>
     <button (click)="sendRequest()" class="search-button" [disabled]="isLoading()">
       @if (isLoading()) {
         Thinking...

@@ -87,6 +87,7 @@ footer {
 
 .search-section {
   display: flex;
+  align-items: center;
   gap: 1rem;
   margin-bottom: 3rem;
   max-width: 600px;
@@ -102,11 +103,16 @@ footer {
     flex: 1;
     padding: 1rem 1.5rem;
     font-size: 1rem;
+    display: flex;
+    align-items: center;
+    font-family: inherit;
     border: 1px solid $border-line;
-    border-radius: 50px;
+    border-radius: 15px;
     outline: none;
     transition: all 0.2s ease;
     box-shadow: 0 4px 6px -1px $box-shadow;
+    resize: none;
+    overflow: hidden;
 
     &:focus {
       border-color: $border-line;
@@ -115,6 +121,15 @@ footer {
     &:disabled {
       background-color: $border-line;
       cursor: not-allowed;
+    }
+
+    @media (max-width: 768px) {
+      width: 90%;
+    }
+
+    @media (max-width: 480px) {
+      border-radius: 20px;
+      width: 95%;
     }
   }
 
@@ -126,6 +141,7 @@ footer {
     background-color: $primary-color;
     border: none;
     border-radius: 50px;
+    height: 2.5rem;
     cursor: pointer;
     transition: background-color 0.2s ease;
 

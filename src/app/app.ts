@@ -1,4 +1,4 @@
-import { Component, signal, inject } from '@angular/core';
+import { Component, signal, inject, HostListener, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
@@ -32,7 +32,7 @@ export interface PeccData {
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
-export class App {
+export class App implements OnInit {
   private http = inject(HttpClient);
   
   protected readonly countryInput = signal('');
@@ -40,8 +40,29 @@ export class App {
   
   protected readonly peccData = signal<PeccData | null>(null);
   protected readonly errorMessage = signal('');
+  
+  protected readonly textareaRows = signal(1);
 
   private apiUrl = 'https://mschustereder-pecc.hf.space/chat';
+
+  ngOnInit() {
+    this.checkWindowSize();
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.checkWindowSize();
+  }
+
+  private checkWindowSize() {
+    if (window.innerWidth <= 480) {
+      this.textareaRows.set(3);
+    } else if (window.innerWidth <= 768) {
+      this.textareaRows.set(2);
+    } else {
+      this.textareaRows.set(1);
+    }
+  }
 
   sendRequest() {
     if (!this.countryInput().trim()) return;
