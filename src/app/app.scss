@@ -214,19 +214,13 @@ footer {
     box-shadow: 0 10px 15px -3px $box-shadow, 0 4px 6px -2px $box-shadow;
   }
 
-  .icon {
-    font-size: 2rem;
-    display: block;
-    margin-bottom: 1rem;
-  }
-
-  h3 {
-    font-size: 1.2rem;
-    color: $primary-dark;
-    margin-bottom: 0.5rem;
-    border-bottom: 2px solid $border-line;
-    padding-bottom: 0.5rem;
+  .card-icon {
+    height: 10rem;
     width: 100%;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid $border-line;
   }
 
   p {

@@ -40,26 +40,23 @@
 
       <div class="cards-grid">
         <div class="info-card">
-          <span class="icon">👥</span>
-          <h3>Population</h3>
+          <img src="assets/population_icon.png" alt="Population" class="card-icon" />
           <p>{{ data.population }}</p>
         </div>
 
         <div class="info-card">
-          <span class="icon">🏙️</span>
-          <h3>Capital</h3>
+          <img src="assets/capital_icon.png" alt="Capital" class="card-icon" />
           <p>{{ data.capital }}</p>
         </div>
 
         <div class="info-card">
-          <span class="icon">💵</span>
-          <h3>Currency</h3>
+          <img src="assets/currency_icon.png" alt="Currency" class="card-icon" />
           <p>{{ data.currency }}</p>
         </div>
 
         <div class="info-card economy-card">
-          <span class="icon">📈</span>
-          <h3>Economy ({{ data.economy.year }})</h3>
+          <img src="assets/economy_icon.png" alt="Economy" class="card-icon" />
+          <p><strong>Year:</strong> {{ data.economy.year }}</p>
           <p><strong>Region:</strong> {{ data.economy.region }}</p>
           <p><strong>Total GDP:</strong> {{ data.economy.gdp_total_nominal }}</p>
           <p><strong>Per Capita:</strong> {{ data.economy.gdp_per_capita_nominal }}</p>
