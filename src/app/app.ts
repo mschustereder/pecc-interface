@@ -64,6 +64,21 @@ export class App implements OnInit {
     }
   }
 
+  private handleFallbackError() {
+    this.peccData.set({
+      population: "N/A",
+      economy: {
+        region: "N/A",
+        gdp_total_nominal: "N/A",
+        gdp_per_capita_nominal: "N/A",
+        year: "N/A"
+      },
+      capital: "N/A",
+      currency: "N/A",
+      summary: "Hello, I am PECC. I encountered a temporary network or processing error while attempting to fetch data for your request. Please try searching again."
+    });
+  }
+
   sendRequest() {
     if (!this.countryInput().trim()) return;
 
@@ -81,13 +96,13 @@ export class App implements OnInit {
           this.peccData.set(parsedData);
         } catch (e) {
           console.error('cannot parse JSON:', res.reply);
-          this.errorMessage.set('got invalid data format from PECC.');
+          this.handleFallbackError();
         }
       },
       error: (err) => {
         this.isLoading.set(false);
         console.error('Error:', err);
-        this.errorMessage.set('Connection failed. Please check the PECC API status.');
+        this.handleFallbackError();
       }
     });
   }
