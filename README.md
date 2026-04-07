@@ -12,7 +12,8 @@ For the Python/LangChain backend that powers this interface, see the [backend re
 * **Framework:** Angular 21 (Standalone Components)
 * **Language:** TypeScript
 * **Styling:** SCSS (CSS Grid, Flexbox, responsive design)
-* **Features:** * Dynamic layout scaling based on device width.
+* **Features:**
+  * Dynamic layout scaling based on device width.
   * Strict interface binding to API responses.
   * Graceful frontend error handling and fallback UI states.
 
