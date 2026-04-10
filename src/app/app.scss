@@ -8,6 +8,11 @@ $summary-box-bg: #c9eaf9;
 $border-line: #eff6f9;
 $primary-dark: #0f3560;
 $error-red: #b7181d;
+$border-hint: #fef08a;
+$bg-hint: #fefce8;
+$small-text-hint: #854d0e;
+$strong-text-hint: #713f12;
+
 
 .app-container {
   margin: 0 auto;
@@ -232,4 +237,33 @@ footer {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+.rate-limit-hint {
+  text-align: center;
+  margin: 0 auto 3rem auto;
+  border-radius: 8px;
+  border: 3px solid $border-hint;
+  background-color: $bg-hint;
+  width: 100%;
+  max-width: 550px;
+  padding: 0.8rem 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+
+  p {
+    font-size: 0.9rem;
+    color: $small-text-hint;
+    margin: 0;
+    line-height: 1.5;
+
+    strong {
+      color: $strong-text-hint;
+    }
+  }
+
+  @media (max-width: 600px) {
+    width: 90%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 2rem;
+  }
 }

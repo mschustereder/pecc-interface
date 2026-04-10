@@ -75,7 +75,7 @@ export class App implements OnInit {
       },
       capital: "N/A",
       currency: "N/A",
-      summary: "Hello, I am PECC. I encountered a temporary network or processing error while attempting to fetch data for your request. Please try searching again."
+      summary: "Hello, I am PECC. I likely hit a free-tier API rate limit while fetching your data! Please wait about 5 to 10 seconds and try your search again."
     });
   }
 
